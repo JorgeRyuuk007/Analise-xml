@@ -1,0 +1,133 @@
+# 📊 Analisador NFe SEFAZ
+
+Sistema web para análise de Notas Fiscais Eletrônicas (NFe) com cruzamento de dados SEFAZ e classificação tributária por NCM.
+
+![Python](https://img.shields.io/badge/python-v3.11+-blue.svg)
+![Streamlit](https://img.shields.io/badge/streamlit-1.28.2-FF4B4B.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
+## 🚀 Demo Online
+
+🔗 **[Acessar Sistema](https://seu-app.onrender.com)**
+
+## 📋 Funcionalidades
+
+- ✅ **Importação de Dados**
+  - Base NCM (Excel) com classificação tributária
+  - Dados SEFAZ (CSV) com situação das notas
+  - XMLs das Notas Fiscais
+
+- 📊 **Análise Automática**
+  - Cruzamento SEFAZ x XMLs por chave de acesso
+  - Classificação automática: Monofásico / Tributado
+  - Valores baseados na SEFAZ (oficial)
+
+- 📈 **Visualizações**
+  - Gráfico de distribuição tributária
+  - Métricas de faturamento
+  - Preview dos dados processados
+
+- 📥 **Exportação**
+  - Excel formatado com análise detalhada
+  - Planilha de resumo incluída
+  - Formatação profissional
+
+## 🛠️ Tecnologias
+
+- **Backend**: Python 3.11
+- **Frontend**: Streamlit
+- **Processamento**: Pandas, XML ElementTree
+- **Visualização**: Plotly
+- **Export**: XlsxWriter, OpenPyxl
+
+## 💻 Instalação Local
+
+### Pré-requisitos
+- Python 3.8 ou superior
+- pip (gerenciador de pacotes)
+
+### Passos
+
+1. **Clone o repositório**
+```bash
+git clone https://github.com/seu-usuario/analisador-nfe.git
+cd analisador-nfe
+```
+
+2. **Crie um ambiente virtual** (opcional, mas recomendado)
+```bash
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# Linux/Mac
+source venv/bin/activate
+```
+
+3. **Instale as dependências**
+```bash
+pip install -r requirements.txt
+```
+
+4. **Execute a aplicação**
+```bash
+streamlit run app.py
+```
+
+5. **Acesse no navegador**
+```
+http://localhost:8501
+```
+
+## 📁 Estrutura dos Arquivos de Entrada
+
+### 1. Base NCM (Excel)
+Deve conter as colunas:
+- **NCM**: Código NCM do produto
+- **Classificação**: "Monofásico" ou "Tributado"
+
+### 2. CSV SEFAZ
+Colunas necessárias:
+- **Chave de Acesso**: Chave NFe de 44 dígitos
+- **Situação**: Status da nota (Autorizada/Cancelada/Denegada)
+- **Tipo Operação**: Entrada/Saída
+- **Valor**: Valor da nota
+
+### 3. XMLs NFe
+- Arquivos XML padrão de NFe brasileira
+- O sistema extrai automaticamente os dados necessários
+
+## 🚀 Deploy no Render
+
+1. Fork este repositório
+2. Crie uma conta no [Render](https://render.com)
+3. Conecte seu GitHub
+4. Crie um novo Web Service
+5. Selecione este repositório
+6. O deploy será feito automaticamente!
+
+## 📊 Como Usar
+
+1. **Carregue a Base NCM** (Excel com classificações)
+2. **Carregue o CSV SEFAZ** (dados oficiais)
+3. **Carregue os XMLs** (múltiplos arquivos)
+4. **Clique em "Processar Análise"**
+5. **Visualize os resultados** e baixe o Excel
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Sinta-se à vontade para:
+
+1. Fazer um Fork do projeto
+2. Criar uma branch (`git checkout -b feature/NovaFuncionalidade`)
+3. Commit suas mudanças (`git commit -m 'Add: Nova funcionalidade'`)
+4. Push para a branch (`git push origin feature/NovaFuncionalidade`)
+5. Abrir um Pull Request
+
+
+
+## 👨‍💻 Autor
+
+Seu Nome
+- GitHub: [@JorgeRyuuk](https://github.com/JorgeRyuuk)
+
+
